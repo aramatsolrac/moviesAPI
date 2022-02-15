@@ -2,8 +2,9 @@
 @use "./mixins" as *;
 body {
     background-color: $color-primary-dark;
-    @include flexed(column, center, center);
-    // height: 100vh;
+    @include flexed(column, space-between, center);
+    position: relative;
+    height: 100vh;
 }
 
 header {
@@ -11,6 +12,14 @@ header {
     padding: 1.5rem;
     width: 100%;
     margin-bottom: 2rem;
+    box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+footer {
+    @include flexed (row, space-around, center);
+    padding: 1.5rem;
+    width: 100%;
+    color: $color-font-heading;
     box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
@@ -63,6 +72,10 @@ header {
 
 .selectLanguage,
 .selectGenres {
+    border: 1px solid $color-font-heading;
+    color: $color-font-heading;
+    border-radius: 50px;
+    background-color: transparent;
     margin-right: 2.5rem;
     border-radius: 1rem;
     padding: .1rem 1rem;

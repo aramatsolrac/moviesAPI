@@ -8,8 +8,10 @@ body {
   background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  height: 100vh;
 }
 
 header {
@@ -20,6 +22,17 @@ header {
   padding: 1.5rem;
   width: 100%;
   margin-bottom: 2rem;
+  box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  color: #2fd3f0;
   box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
@@ -78,6 +91,10 @@ header {
 
 .selectLanguage,
 .selectGenres {
+  border: 1px solid #2fd3f0;
+  color: #2fd3f0;
+  border-radius: 50px;
+  background-color: transparent;
   margin-right: 2.5rem;
   border-radius: 1rem;
   padding: 0.1rem 1rem;
@@ -99,31 +116,39 @@ header {
 .site-movies__list__item {
   width: 20%;
   margin-right: 2rem;
+  margin: 1rem;
 }
 
 .item-card {
-  margin-bottom: 1rem;
   color: white;
   font-size: 1rem;
   width: 100%;
+  margin: 1rem;
 }
 .item-card__img {
   border-radius: 5px;
-  margin-bottom: 0.5rem;
   box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 .item-card__name {
-  width: 100%;
-  padding-bottom: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+  padding: 0.75rem 0;
 }
 .item-card__date {
   font-size: 0.1em;
 }
-.item-card__btn--like {
+.item-card__btn {
+  margin: 0.5rem 0;
   border: none;
-  border-radius: 0.1rem;
-  color: lightgray;
-  padding: 0.3rem;
+  color: grey;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.item-card__btn:hover {
+  transform: scale(1.1);
 }
 .item-card__btn--liked {
   color: gold;
@@ -133,4 +158,9 @@ header {
   color: white;
   padding: 1rem;
   border-radius: 30px;
+}
+
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
 }/*# sourceMappingURL=main.css.map */
