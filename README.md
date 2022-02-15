@@ -52,8 +52,10 @@ Build a front-end web application that fulfills the following requirements:
 
 ### Up next
 
-- Responsive design
-- More selectors
+- Add responsive design
+- Add more selectors
+- Add validation
+- Improve search function
 - Improve BEM and Sass
 
 ### Authors
