@@ -2,15 +2,9 @@ const moviesGenresURL =
     "https://api.themoviedb.org/3/genre/movie/list?api_key=2d0391dda9aa7c639004867f4b4bb58d";
 
 const selectGenres = document.querySelector(".selectGenres");
-const selectValue = selectGenres.value;
-
-// const selectLanguage = document.querySelector(".selectLanguage");
-// const selectLangValue = selectLanguage.value;
 const submitBtn = document.getElementById("button");
 
 submitBtn.addEventListener("click", submitGenre);
-
-let selectedGenre = "";
 
 function submitGenre(event) {
     event.preventDefault();
@@ -20,7 +14,7 @@ function submitGenre(event) {
     selectGenres.value = "";
 }
 
-function findMovieByGenre(genre, language) {
+function findMovieByGenre(genre) {
     axios
         .get(moviesGenresURL)
         .then((response) => {
@@ -35,7 +29,6 @@ function findMovieByGenre(genre, language) {
                 return genresID;
             }
             const genreID = displayGenresID(response);
-            // console.log({ genreID });
             const moviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=2d0391dda9aa7c639004867f4b4bb58d&with_genres=${genreID}`;
             return axios.get(moviesURL);
         })
@@ -53,18 +46,33 @@ function findMovieByGenre(genre, language) {
                     console.log(
                         selectLangValue === moviesObj.results[i].original_language
                     );
-                    movies.innerHTML += `<li class="site-movies__item">
-                    <div class="item-card">
-                        <img class="item-card__img" src="${image}${moviesObj.results[i].backdrop_path}" alt="">
-                        <p class="item-card__name">${moviesObj.results[i].original_title}</p>
-                        <p class="item-date">${moviesObj.results[i].release_date}</p>
-                    </div>
-                </li>
-            `;
+                    movies.innerHTML +=
+                        `<li class="site-movies__item">
+                        <div class="item-card">
+                            <img class="item-card__img" src="${image}${moviesObj.results[i].backdrop_path}" alt="">
+                            <p class="item-card__name">${moviesObj.results[i].original_title}</p>
+                            <p class="item-date">${moviesObj.results[i].release_date}</p>
+                        </div>
+                        <button class="item-card__btn">
+                            <i class="fas fa-star item-card__btn--like" id="icon-like-${i}" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                    `;
                 }
             }
             if (movies.innerHTML === "") {
-                alert("pick another language");
+                movies.innerHTML =
+                    `<div class="item-card__error-message">
+                    <p>Sorry, we can't find anything in your search.</p>
+                </div>
+                `
             }
+            const likeIcon = document.querySelectorAll(".item-card__btn--like");
+            likeIcon.forEach((icon) => {
+                icon.addEventListener("click", (event) => {
+                    event.target.classList.toggle("item-card__btn--liked");
+                    console.log(likeIcon);
+                });
+            })
         });
 }
