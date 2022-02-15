@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+.site-search__heading {
+  font-size: 3.5rem;
+  color: #2fd3f0;
+}
+
+.form-label {
+  color: white;
+  font-size: 1rem;
+}
+
+.selectGenres {
+  padding: 0 1rem;
+}
+
+#button {
+  padding: 0 2.75rem;
+  font-size: 1rem;
+  border: 1px solid #2fd3f0;
+  color: #2fd3f0;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.site-movies__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.site-movies__item {
+  width: 20%;
+  margin-right: 2rem;
+}
+
+.item-card {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+}
+.item-card__img {
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.item-card__name {
+  width: 100%;
+  padding-bottom: 0.75rem;
+}
+.item-card__date {
+  font-size: 0.5em;
+}/*# sourceMappingURL=main.css.map */

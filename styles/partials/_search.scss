@@ -1,0 +1,35 @@
+@use "./color" as *;
+@use "./mixins" as *;
+
+body {
+  background-color: $color-primary-dark;
+  @include flexed(column, center, center);
+  // height: 100vh;
+}
+
+.site-search {
+  @include flexed(column, center, center);
+  &__heading {
+    font-size: 3.5rem;
+    color: $color-font-heading;
+  }
+  margin: 2rem auto;
+}
+
+.form-label {
+  color: $color-font-primary;
+  font-size: 1rem;
+}
+
+.selectGenres {
+  padding: 0 1rem;
+}
+
+#button {
+  padding: 0 2.75rem;
+  font-size: 1rem;
+  border: 1px solid $color-font-heading;
+  color: $color-font-heading;
+  border-radius: 10px;
+  background-color: transparent;
+}
