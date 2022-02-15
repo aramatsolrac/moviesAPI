@@ -9,6 +9,7 @@ It's an app that gets movies information from [The Movie Database](https://www.t
 - [Technologies](#technologies)
 - [Installing](#installing)
 - [Live](#live)
+- [Up next](#up-next)
 - [Authors](#authors)
 
 ## Overview
@@ -48,6 +49,12 @@ Build a front-end web application that fulfills the following requirements:
 ### Live
 
 - <a href="https://aramatsolrac.github.io/moviesAPI/" target="_blank">Movies API</a>
+
+### Up next
+
+- Responsive design
+- More selectors
+- Improve BEM and Sass
 
 ### Authors
 
