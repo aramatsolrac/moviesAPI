@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./camera.png">
     <title>Movies Search</title>
     <!-- add icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,7 +17,7 @@
 <body>
     <header class="site-search">
         <section class="site-search__navbar">
-            <img class="site-search__site-logo" src="./camera.png" alt="movies logo">
+            <a href="index.html"> <img class="site-search__site-logo" src="./camera.png" alt="movies logo"></a>
             <h1 class="site-search__heading">Movies Search</h1>
         </section>
         <section class="site-search__form">
@@ -61,7 +62,7 @@
             <button id="button" type="submit">Search</button>
         </section>
     </header>
-    <main>
+    <main class="wrapper">
         <section class="site-movies">
             <ul class="site-movies__list">
                 <!-- populate via js -->
@@ -69,6 +70,11 @@
         </section>
     </main>
 
+    <footer>
+        <div>Tamara Carlos</div>
+        <div>Chris Nguyen</div>
+        <div>Yik Tung</div>
+    </footer>
     <script src="script.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
