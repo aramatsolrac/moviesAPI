@@ -1,56 +1,70 @@
 @use "./color" as *;
 @use "./mixins" as *;
-
 body {
-  background-color: $color-primary-dark;
-  @include flexed(column, center, center);
-  // height: 100vh;
+    background-color: $color-primary-dark;
+    @include flexed(column, center, center);
+    // height: 100vh;
+}
+
+header {
+    @include flexed (row, flex-start, flex-start);
+    padding: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 6px #fff, rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .site-search {
-  @include flexed(column, center, center);
-  &__heading {
-    font-size: 3.5rem;
-    color: $color-font-heading;
-    margin-bottom: 1rem;
-  }
-  margin: 2rem auto;
+    @include flexed(row, center, center);
+    &__navbar {
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+    }
+    &__site-logo {
+        width: 4rem;
+    }
+    &__heading {
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: $color-font-heading;
+    }
+    &__form {
+        @include flexed(row, center, center);
+    }
+    margin: 0 auto;
 }
 
 #site-search__form {
-  display: flex;
-  width: 100%;
-  margin-bottom: 1rem;
+    display: flex;
+    width: 100%;
 }
 
 .form-label {
-  color: $color-font-primary;
-  font-size: 1rem;
-}
-
-.selectGenres {
-  padding: 0 1rem;
+    color: $color-font-primary;
+    font-size: 1.3rem;
+    padding: .5rem 1rem;
 }
 
 #button {
-  padding: 0.5rem 4rem;
-  font-size: 1.25rem;
-  border: 1px solid $color-font-heading;
-  color: $color-font-heading;
-  border-radius: 50px;
-  background-color: transparent;
+    padding: 0.5rem 4rem;
+    font-size: 1.25rem;
+    border: 1px solid $color-font-heading;
+    color: $color-font-heading;
+    border-radius: 50px;
+    background-color: transparent;
 }
 
 #button:hover {
-  background-color: $color-font-heading;
-  color: $color-font-primary;
-  transform: scale(1.05);
+    background-color: $color-font-heading;
+    color: $color-font-primary;
+    transform: scale(1.05);
 }
 
+.selectLanguage,
 .selectGenres {
-  width: 30%;
-  margin-right: 2.5rem;
-}
-.selectLanguage {
-  width: 30%;
+    margin-right: 2.5rem;
+    border-radius: 1rem;
+    padding: .1rem 1rem;
+    width: 30%;
 }

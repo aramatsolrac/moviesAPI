@@ -1,14 +1,16 @@
 @use "./color" as *;
 @use "./mixins" as *;
 .site-movies {
+    padding: 1rem;
     &__list {
         list-style: none;
+        padding: 0;
         @include flexed(row, center, baseline);
         flex-wrap: wrap;
-    }
-    &__item {
-        width: 20%;
-        margin-right: 2rem;
+        &__item {
+            width: 20%;
+            margin-right: 2rem;
+        }
     }
 }
 
@@ -28,5 +30,22 @@
     }
     &__date {
         font-size: 0.1em;
+    }
+    &__btn {
+        &--like {
+            border: none;
+            border-radius: .1rem;
+            color: lightgray;
+            padding: .3rem;
+        }
+        &--liked {
+            color: gold;
+        }
+    }
+    &__error-message {
+        border: 1px solid red;
+        color: white;
+        padding: 1rem;
+        border-radius: 30px;
     }
 }
