@@ -27,8 +27,8 @@ Build a front-end web application that fulfills the following requirements:
 
 ### Features
 
-- Select movies by genre
-- Responsive design
+- Select movies by genre and language
+- Favorite a movie
 
 ### Technologies
 
