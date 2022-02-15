@@ -22,6 +22,13 @@ body {
 .site-search__heading {
   font-size: 3.5rem;
   color: #2fd3f0;
+  margin-bottom: 1rem;
+}
+
+#site-search__form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .form-label {
@@ -34,12 +41,27 @@ body {
 }
 
 #button {
-  padding: 0 2.75rem;
-  font-size: 1rem;
+  padding: 0.5rem 4rem;
+  font-size: 1.25rem;
   border: 1px solid #2fd3f0;
   color: #2fd3f0;
-  border-radius: 10px;
+  border-radius: 50px;
   background-color: transparent;
+}
+
+#button:hover {
+  background-color: #2fd3f0;
+  color: white;
+  transform: scale(1.05);
+}
+
+.selectGenres {
+  width: 30%;
+  margin-right: 2.5rem;
+}
+
+.selectLanguage {
+  width: 30%;
 }
 
 .site-movies__list {
