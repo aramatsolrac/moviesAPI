@@ -6,14 +6,15 @@ const submitBtn = document.getElementById("button");
 
 submitBtn.addEventListener("click", submitGenre);
 
+// processing the submitted event
 function submitGenre(event) {
     event.preventDefault();
     const selectValue = selectGenres.value;
-    console.log(selectGenres.value);
     findMovieByGenre(selectValue);
     selectGenres.value = "";
 }
 
+// getting the genre ID and print the movies cards
 function findMovieByGenre(genre) {
     axios
         .get(moviesGenresURL)
@@ -33,29 +34,25 @@ function findMovieByGenre(genre) {
             return axios.get(moviesURL);
         })
         .then((response) => {
-            console.log(response.data);
             const selectLanguage = document.querySelector(".selectLanguage");
             const selectLangValue = selectLanguage.value;
+            selectLanguage.value = ""
             const movies = document.querySelector(".site-movies__list");
             movies.innerHTML = "";
-            console.log(selectLangValue);
             const moviesObj = response.data;
             const image = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
             for (let i = 0; i < moviesObj.results.length; i++) {
                 if (selectLangValue === moviesObj.results[i].original_language) {
-                    console.log(
-                        selectLangValue === moviesObj.results[i].original_language
-                    );
                     movies.innerHTML +=
                         `<li class="site-movies__item">
                         <div class="item-card">
                             <img class="item-card__img" src="${image}${moviesObj.results[i].backdrop_path}" alt="">
                             <p class="item-card__name">${moviesObj.results[i].original_title}</p>
                             <p class="item-date">${moviesObj.results[i].release_date}</p>
-                        </div>
-                        <button class="item-card__btn">
+                            <button class="item-card__btn">
                             <i class="fas fa-star item-card__btn--like" id="icon-like-${i}" aria-hidden="true"></i>
                         </button>
+                        </div>
                     </li>
                     `;
                 }
@@ -63,16 +60,18 @@ function findMovieByGenre(genre) {
             if (movies.innerHTML === "") {
                 movies.innerHTML =
                     `<div class="item-card__error-message">
-                    <p>Sorry, we can't find anything in your search.</p>
-                </div>
-                `
+                        <p>Sorry, we can't find anything in your search.</p>
+                    </div>
+                    `
             }
             const likeIcon = document.querySelectorAll(".item-card__btn--like");
             likeIcon.forEach((icon) => {
                 icon.addEventListener("click", (event) => {
                     event.target.classList.toggle("item-card__btn--liked");
-                    console.log(likeIcon);
                 });
             })
+        })
+        .catch(() => {
+            alert("Error trying to fetch the API.")
         });
 }
