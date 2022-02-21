@@ -25,16 +25,17 @@ footer {
 
 .site-search {
     @include flexed(row, center, center);
+    padding: .5rem;
     &__navbar {
         display: flex;
         flex-direction: row;
         width: 30%;
     }
     &__site-logo {
-        width: 4rem;
+        width: 3.5rem;
     }
     &__heading {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 1rem;
         color: $color-font-heading;
     }
@@ -51,13 +52,13 @@ footer {
 
 .form-label {
     color: $color-font-primary;
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: .5rem 1rem;
 }
 
 #button {
     padding: 0.5rem 4rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     border: 1px solid $color-font-heading;
     color: $color-font-heading;
     border-radius: 50px;
